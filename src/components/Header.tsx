@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,6 +27,9 @@ const Header = () => {
             <a href="#pricing" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Pricing
             </a>
+            <Link to="/terms" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
+              Terms
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -52,6 +56,7 @@ const Header = () => {
               <a href="#plugins" className="text-primary-foreground/90">Plugins</a>
               <a href="#features" className="text-primary-foreground/90">Features</a>
               <a href="#pricing" className="text-primary-foreground/90">Pricing</a>
+              <Link to="/terms" className="text-primary-foreground/90">Terms</Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-primary-foreground/20">
                 <Button variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10 justify-start">
                   Login

@@ -38,7 +38,7 @@ const Footer = () => {
       title: "Legal",
       links: [
         "Privacy Policy",
-        "Terms of Service",
+        "Terms and Conditions",
         "License",
         "Refund Policy",
         "GDPR"

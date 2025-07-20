@@ -2,76 +2,208 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Download, Zap, ShoppingCart, Mail, Users, BarChart, Palette } from "lucide-react";
+import React from "react"; // Added missing import
 
 const PluginShowcase = () => {
   const plugins = [
     {
-      id: 1,
-      name: "WP Form Builder Pro",
-      category: "Forms",
-      price: 29,
-      rating: 4.9,
-      downloads: "25K+",
-      icon: Mail,
-      description: "Advanced form builder with drag & drop interface and conditional logic.",
-      features: ["Drag & Drop", "Conditional Logic", "Payment Integration"]
+      name: "Ultimate Addons",
+      description: "Powerful addon pack for WordPress.",
+      price: 15,
+      image: "/images/Ultimate Addons.jpg"
     },
     {
-      id: 2,
-      name: "Analytics Dashboard",
-      category: "Analytics",
-      price: 39,
-      rating: 4.8,
-      downloads: "18K+",
-      icon: BarChart,
-      description: "Complete analytics solution with beautiful charts and reports.",
-      features: ["Real-time Data", "Custom Reports", "Export Options"]
+      name: "Total Cache",
+      description: "Speed up your site with advanced caching.",
+      price: 15,
+      image: "/images/Total Cache.jpg"
     },
     {
-      id: 3,
-      name: "Speed Optimizer Pro",
-      category: "Performance",
-      price: 25,
-      rating: 4.9,
-      downloads: "32K+",
-      icon: Zap,
-      description: "Boost your website speed with advanced optimization techniques.",
-      features: ["Image Compression", "Cache Management", "CDN Integration"]
+      name: "Ultimate Addons for Elementor",
+      description: "Enhance Elementor with premium widgets.",
+      price: 15,
+      image: "/images/Ultimate Addons for Elementor.jpg"
     },
     {
-      id: 4,
-      name: "E-Commerce Booster",
-      category: "E-Commerce",
-      price: 49,
-      rating: 4.7,
-      downloads: "15K+",
-      icon: ShoppingCart,
-      description: "Enhance your WooCommerce store with advanced features.",
-      features: ["Product Variants", "Bulk Discounts", "Advanced Search"]
+      name: "WP Rocket",
+      description: "Premium caching plugin for WordPress.",
+      price: 15,
+      image: "/images/WP Rocket.jpg"
     },
     {
-      id: 5,
-      name: "Membership Manager",
-      category: "Membership",
-      price: 59,
-      rating: 4.8,
-      downloads: "12K+",
-      icon: Users,
-      description: "Complete membership solution with subscription management.",
-      features: ["User Levels", "Content Protection", "Payment Gateways"]
+      name: "Membership PRO",
+      description: "Advanced membership management.",
+      price: 15,
+      image: "/images/Membership PRO.jpg"
     },
     {
-      id: 6,
-      name: "Design Tools Pro",
-      category: "Design",
-      price: 35,
-      rating: 4.9,
-      downloads: "20K+",
-      icon: Palette,
-      description: "Advanced design tools for creating stunning page layouts.",
-      features: ["Visual Builder", "Custom Elements", "Template Library"]
-    }
+      name: "Woocommerece Notification",
+      description: "Show real-time sales notifications.",
+      price: 15,
+      image: "/images/Woocommerece Notification.jpg"
+    },
+    {
+      name: "Woocommerece Order Tracker",
+      description: "Track WooCommerce orders easily.",
+      price: 15,
+      image: "/images/Woocommerece Order Tracker.jpg"
+    },
+    {
+      name: "Social Login for WordPress",
+      description: "Enable social login on your site.",
+      price: 15,
+      image: "/images/Social Login for WordPress.jpg"
+    },
+    {
+      name: "Ultimate addons for Beaver Builder",
+      description: "Premium addons for Beaver Builder.",
+      price: 15,
+      image: "/images/Ultimate addons for Beaver Builder.jpg"
+    },
+    {
+      name: "SNIP Structured Data",
+      description: "Add rich snippets to your site.",
+      price: 15,
+      image: "/images/SNIP Structured Data.jpg"
+    },
+    {
+      name: "SEOPress",
+      description: "Comprehensive SEO plugin.",
+      price: 15,
+      image: "/images/SEOPress.jpg"
+    },
+    {
+      name: "SCHEMA PRO",
+      description: "Advanced schema markup plugin.",
+      price: 15,
+      image: "/images/SCHEMA PRO.jpg"
+    },
+    {
+      name: "Premium SEO Pack",
+      description: "All-in-one SEO solution.",
+      price: 15,
+      image: "/images/Premium SEO Pack.jpg"
+    },
+    {
+      name: "RANKIE",
+      description: "Track your keyword rankings.",
+      price: 15,
+      image: "/images/RANKIE.jpg"
+    },
+    {
+      name: "Permalink Manager Pro",
+      description: "Manage permalinks with ease.",
+      price: 15,
+      image: "/images/Permalink Manager Pro.jpg"
+    },
+    {
+      name: "All in one SEO PRO",
+      description: "Complete SEO toolkit.",
+      price: 15,
+      image: "/images/All in one SEO PRO.jpg"
+    },
+    {
+      name: "SmartCrawl",
+      description: "SEO and site optimization.",
+      price: 15,
+      image: "/images/SmartCrawl.jpg"
+    },
+    {
+      name: "W3 Total Cache",
+      description: "Improve site performance.",
+      price: 15,
+      image: "/images/W3 Total Cache.jpg"
+    },
+    {
+      name: "WP Fastest cache Premium",
+      description: "Fast and easy caching.",
+      price: 15,
+      image: "/images/WP Fastest cache Premium.jpg"
+    },
+    {
+      name: "WP AMP",
+      description: "Accelerated Mobile Pages for WP.",
+      price: 15,
+      image: "/images/WP AMP.jpg"
+    },
+    {
+      name: "Meet Smush Pro",
+      description: "Image optimization plugin.",
+      price: 15,
+      image: "/images/Meet Smush Pro.jpg"
+    },
+    {
+      name: "Swift Performance",
+      description: "Speed up your WordPress site.",
+      price: 15,
+      image: "/images/Swift Performance.jpg"
+    },
+    {
+      name: "PixelYourSite",
+      description: "Manage tracking pixels easily.",
+      price: 15,
+      image: "/images/PixelYourSite.jpg"
+    },
+    {
+      name: "Woocommerece Google Analytics Pro",
+      description: "Advanced Google Analytics for WooCommerce.",
+      price: 15,
+      image: "/images/Woocommerece Google Analytics Pro.jpg"
+    },
+    {
+      name: "Woocommerce Reporting",
+      description: "Detailed WooCommerce reports.",
+      price: 15,
+      image: "/images/Woocommerce Reporting.jpg"
+    },
+    {
+      name: "Google Analytics+",
+      description: "Enhanced Google Analytics integration.",
+      price: 15,
+      image: "/images/Google Analytics+.jpg"
+    },
+    {
+      name: "Beehive Pro",
+      description: "Google Analytics dashboard plugin.",
+      price: 15,
+      image: "/images/Beehive Pro.jpg"
+    },
+    {
+      name: "Layer Slider",
+      description: "Premium slider plugin.",
+      price: 15,
+      image: "/images/Layer Slider.jpg"
+    },
+    {
+      name: "iThemes Security Pro",
+      description: "Advanced WordPress security.",
+      price: 15,
+      image: "/images/iThemes Security Pro.jpg"
+    },
+    {
+      name: "Backup Buddy",
+      description: "Backup and restore plugin.",
+      price: 15,
+      image: "/images/Backup Buddy.jpg"
+    },
+    {
+      name: "Content Locker",
+      description: "Lock content for subscribers.",
+      price: 15,
+      image: "/images/Content Locker.jpg"
+    },
   ];
+
+  // Remove duplicate entries from the plugins array based on image filename
+  const uniquePlugins = [];
+  const seenPluginImages = new Set();
+  for (const plugin of plugins) {
+    const img = (plugin.image || '').toLowerCase();
+    if (!seenPluginImages.has(img)) {
+      uniquePlugins.push(plugin);
+      seenPluginImages.add(img);
+    }
+  }
 
   return (
     <section id="plugins" className="py-20 bg-background">
@@ -88,61 +220,73 @@ const PluginShowcase = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {plugins.map((plugin) => (
-            <Card key={plugin.id} className="group hover:shadow-card transition-all duration-300 hover:border-primary/20">
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="bg-primary/10 rounded-lg w-14 h-14 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <plugin.icon className="text-primary" size={24} />
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Star className="fill-accent text-accent mr-1" size={14} />
-                    {plugin.rating}
-                  </div>
+          {uniquePlugins.map((plugin) => {
+            // Generate possible image file names from plugin name
+            const baseName = plugin.name.toLowerCase().replace(/\s+/g, '-');
+            const imageFiles = [
+              `/images/${baseName}.jpg`,
+              `/images/${baseName}.jpeg`,
+              `/images/${baseName}.png`,
+            ];
+            // State to track which image to show
+            const [imgSrc, setImgSrc] = React.useState(imageFiles[0]);
+            // Handler to try next extension if image fails
+            const handleImgError = () => {
+              const currentIdx = imageFiles.indexOf(imgSrc);
+              if (currentIdx < imageFiles.length - 1) {
+                setImgSrc(imageFiles[currentIdx + 1]);
+              } else {
+                setImgSrc(""); // No image found, fallback to icon
+              }
+            };
+            return (
+              <Card key={plugin.name} className="group hover:shadow-card transition-all duration-300 hover:border-primary/20">
+                <div className="relative overflow-hidden bg-white" style={{ aspectRatio: '16/9' }}>
+                  {plugin.image ? (
+                    <img src={plugin.image} alt={plugin.name} className="w-full h-full object-contain" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                      <Mail className="text-primary" size={32} />
+                    </div>
+                  )}
                 </div>
-
-                <div className="mb-3">
-                  <Badge variant="secondary" className="text-xs mb-2">
-                    {plugin.category}
-                  </Badge>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {plugin.name}
-                  </h3>
-                </div>
-
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                  {plugin.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {plugin.features.map((feature, index) => (
-                    <Badge key={index} variant="outline" className="text-xs">
-                      {feature}
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    {/* Removed icon below image */}
+                    <div />
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Star className="fill-accent text-accent mr-1" size={14} />
+                      4.9
+                    </div>
+                  </div>
+                  <div className="mb-3">
+                    <Badge variant="secondary" className="text-xs mb-2">
+                      Plugin
                     </Badge>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Download size={14} className="mr-1" />
-                    {plugin.downloads} downloads
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      {plugin.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {plugin.description}
+                    </p>
                   </div>
-                  <div className="text-2xl font-bold text-primary">
-                    ${plugin.price}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Download size={14} className="mr-1" />
+                      25K+ downloads
+                    </div>
+                    <div className="text-2xl font-bold text-primary">
+                      ${plugin.price}
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex gap-2">
-                  <Button className="flex-1" size="sm">
-                    Buy Plugin
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Demo
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <div className="flex gap-2">
+                    <Button className="flex-1" size="sm">Buy Plugin</Button>
+                    <Button variant="outline" size="sm">Demo</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">

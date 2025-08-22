@@ -30,6 +30,9 @@ const Header = () => {
             <Link to="/terms" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Terms
             </Link>
+            <Link to="/privacy" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
+              Privacy Policy
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -57,6 +60,7 @@ const Header = () => {
               <a href="#features" className="text-primary-foreground/90">Features</a>
               <a href="#pricing" className="text-primary-foreground/90">Pricing</a>
               <Link to="/terms" className="text-primary-foreground/90">Terms</Link>
+              <Link to="/privacy" className="text-primary-foreground/90">Privacy Policy</Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-primary-foreground/20">
                 <Button variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10 justify-start">
                   Login

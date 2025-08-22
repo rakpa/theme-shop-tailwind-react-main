@@ -5,8 +5,24 @@ import ThemeShowcase from "@/components/ThemeShowcase";
 import PluginShowcase from "@/components/PluginShowcase";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

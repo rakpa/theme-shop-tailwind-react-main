@@ -15,18 +15,18 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#themes" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
+            <Link to="/#themes" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Themes
-            </a>
-            <a href="#plugins" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
+            </Link>
+            <Link to="/#plugins" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Plugins
-            </a>
-            <a href="#features" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
+            </Link>
+            <Link to="/#features" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Features
-            </a>
-            <a href="#pricing" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
+            </Link>
+            <Link to="/#pricing" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Pricing
-            </a>
+            </Link>
             <Link to="/terms" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Terms
             </Link>
@@ -55,10 +55,10 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-primary-foreground/20">
             <nav className="flex flex-col space-y-4 mt-4">
-              <a href="#themes" className="text-primary-foreground/90">Themes</a>
-              <a href="#plugins" className="text-primary-foreground/90">Plugins</a>
-              <a href="#features" className="text-primary-foreground/90">Features</a>
-              <a href="#pricing" className="text-primary-foreground/90">Pricing</a>
+              <Link to="/#themes" className="text-primary-foreground/90">Themes</Link>
+              <Link to="/#plugins" className="text-primary-foreground/90">Plugins</Link>
+              <Link to="/#features" className="text-primary-foreground/90">Features</Link>
+              <Link to="/#pricing" className="text-primary-foreground/90">Pricing</Link>
               <Link to="/terms" className="text-primary-foreground/90">Terms</Link>
               <Link to="/privacy" className="text-primary-foreground/90">Privacy Policy</Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-primary-foreground/20">

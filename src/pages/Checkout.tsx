@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || "");
-
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
@@ -72,17 +70,43 @@ const CheckoutForm = () => {
 };
 
 const Checkout = () => {
-  const stripeKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+  const [publishableKey, setPublishableKey] = useState<string | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch("/api/stripe-publishable-key");
+        const data = await res.json();
+        if (!data?.publishableKey) throw new Error("No publishable key");
+        setPublishableKey(data.publishableKey);
+      } catch (e: any) {
+        setErr(e?.message || "Failed to load publishable key");
+      }
+    })();
+  }, []);
+
+  if (err) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-12">
+          <div className="text-destructive">{err}</div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-6">Checkout</h1>
-        {!stripeKey ? (
-          <div className="text-destructive">Stripe publishable key not configured.</div>
+        {!publishableKey ? (
+          <div>Loading…</div>
         ) : (
-          <Elements stripe={stripePromise}>
+          <Elements stripe={loadStripe(publishableKey)}>
             <CheckoutForm />
           </Elements>
         )}

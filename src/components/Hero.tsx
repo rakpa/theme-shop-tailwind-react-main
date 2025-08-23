@@ -4,16 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Download, Users } from "lucide-react";
 
 const Hero = () => {
-  const handleCheckout = async () => {
-    try {
-      const res = await fetch("/api/create-checkout-session", { method: "POST" });
-      const data = await res.json();
-      if (data?.url) {
-        window.location.href = data.url;
-      }
-    } catch (e) {
-      console.error("Checkout error", e);
-    }
+  const handleCheckout = () => {
+    window.location.href = "/api/create-checkout-session";
   };
 
   return (

@@ -1,8 +1,8 @@
 import Stripe from "stripe";
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+  if (req.method !== "POST" && req.method !== "GET") {
+    res.setHeader("Allow", "POST, GET");
     return res.status(405).json({ error: "Method not allowed" });
   }
 
@@ -38,6 +38,10 @@ export default async function handler(req, res) {
         package: "wp-bundle",
       },
     });
+
+    if (req.method === "GET") {
+      return res.writeHead(302, { Location: session.url }).end();
+    }
 
     return res.status(200).json({ url: session.url });
   } catch (error) {

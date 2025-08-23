@@ -4,6 +4,18 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Download, Users } from "lucide-react";
 
 const Hero = () => {
+  const handleCheckout = async () => {
+    try {
+      const res = await fetch("/api/create-checkout-session", { method: "POST" });
+      const data = await res.json();
+      if (data?.url) {
+        window.location.href = data.url;
+      }
+    } catch (e) {
+      console.error("Checkout error", e);
+    }
+  };
+
   return (
     <section className="bg-hero-gradient py-20 overflow-hidden relative">
       <div className="container mx-auto px-4">
@@ -28,9 +40,8 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button variant="hero" size="xl" className="group">
+              <Button variant="hero" size="xl" className="group" onClick={handleCheckout}>
                 One-time Payment -$19
-                <Download className="ml-2 group-hover:translate-y-0.5 transition-transform" />
               </Button>
               <Button variant="ghost" size="xl" className="text-primary-foreground hover:bg-primary-foreground/10">
                 View Demos

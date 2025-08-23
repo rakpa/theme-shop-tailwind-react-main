@@ -30,9 +30,6 @@ const Header = () => {
             <Link to="/full-list" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Full List
             </Link>
-            <Link to="/terms" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
-              Terms
-            </Link>
             <Link to="/privacy" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">
               Privacy Policy
             </Link>
@@ -62,7 +59,6 @@ const Header = () => {
               <Link to="/#plugins" className="text-primary-foreground/90">Plugins</Link>
               <Link to="/#features" className="text-primary-foreground/90">Features</Link>
               <Link to="/#pricing" className="text-primary-foreground/90">Pricing</Link>
-              <Link to="/terms" className="text-primary-foreground/90">Terms</Link>
               <Link to="/privacy" className="text-primary-foreground/90">Privacy Policy</Link>
               <Link to="/full-list" className="text-primary-foreground/90">Full List</Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-primary-foreground/20">

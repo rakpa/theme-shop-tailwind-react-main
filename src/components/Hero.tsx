@@ -23,9 +23,13 @@ const Hero = () => {
               multi-page layouts, and one-page templates. Perfect for any business.
             </p>
 
+            <p className="text-lg font-semibold text-accent-foreground mb-3">
+              Premium 200+ WordPress themes and 400+ Plugins package
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button variant="hero" size="xl" className="group">
-                Browse Themes
+                One-time Payment -$19
                 <Download className="ml-2 group-hover:translate-y-0.5 transition-transform" />
               </Button>
               <Button variant="ghost" size="xl" className="text-primary-foreground hover:bg-primary-foreground/10">
@@ -63,7 +67,7 @@ const Hero = () => {
                 <div className="space-y-3">
                   <div className="bg-background rounded-lg p-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium">Visitors Active</span>
+                      <span className="text-sm font-medium text-muted-foreground">Visitors Active</span>
                       <span className="text-2xl font-bold text-primary">89%</span>
                     </div>
                     <div className="w-full bg-muted rounded-full h-2 mt-2">

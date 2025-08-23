@@ -10,9 +10,9 @@ const Header = () => {
     <header className="bg-hero-gradient shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary-foreground">
+          <Link to="/" className="text-2xl font-bold text-primary-foreground">
             WPCanvas
-          </div>
+          </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/#themes" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">

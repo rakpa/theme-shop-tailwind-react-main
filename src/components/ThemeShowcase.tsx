@@ -159,10 +159,7 @@ const ThemeShowcase = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-2">
-                  <Button className="flex-1" size="sm">
-                    Buy Now
-                  </Button>
+                <div className="flex flex-col sm:flex-row gap-2">
                   <Button variant="outline" size="sm">
                     <Eye size={16} />
                   </Button>
@@ -245,8 +242,7 @@ const ThemeShowcase = () => {
                       </div>
                       <div className="text-2xl font-bold text-primary">$49</div>
                     </div>
-                    <div className="flex gap-2">
-                      <Button className="flex-1" size="sm">Buy Now</Button>
+                    <div className="flex flex-col sm:flex-row gap-2">
                       <Button variant="outline" size="sm"><Eye size={16} /></Button>
                     </div>
                   </CardContent>

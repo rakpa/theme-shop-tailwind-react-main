@@ -5,7 +5,7 @@ import { Star, Download, Users } from "lucide-react";
 
 const Hero = () => {
   const handleCheckout = () => {
-    window.location.href = "/api/create-checkout-session";
+    window.location.href = "/checkout";
   };
 
   return (

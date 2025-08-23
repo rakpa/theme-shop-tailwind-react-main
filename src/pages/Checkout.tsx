@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { Lock } from "lucide-react";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -45,27 +46,56 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 bg-card p-6 rounded-md border">
-      <div>
-        <label className="block text-sm mb-1">Name</label>
-        <input value={name} onChange={(e) => setName(e.target.value)} required className="w-full border rounded px-3 py-2 bg-background" placeholder="Your name" />
-      </div>
-      <div>
-        <label className="block text-sm mb-1">Email</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full border rounded px-3 py-2 bg-background" placeholder="you@example.com" />
-      </div>
-      <div>
-        <label className="block text-sm mb-1">Card Details</label>
-        <div className="border rounded px-3 py-2 bg-background">
-          <CardElement options={{ style: { base: { fontSize: '16px' } } }} />
+    <div className="max-w-2xl mx-auto">
+      <div className="bg-card border rounded-lg shadow-sm">
+        <div className="p-6 border-b">
+          <h2 className="text-xl font-semibold">Complete Your Purchase</h2>
+          <p className="text-sm text-muted-foreground mt-1">One-time Payment – $19 for the full bundle</p>
+        </div>
+        <form onSubmit={handleSubmit} className="p-6 space-y-5">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="sm:col-span-2">
+              <label className="block text-sm mb-1">Full Name</label>
+              <input value={name} onChange={(e) => setName(e.target.value)} required className="w-full border rounded-md px-3 py-2 bg-background focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Jane Doe" />
+            </div>
+            <div className="sm:col-span-2">
+              <label className="block text-sm mb-1">Email Address</label>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full border rounded-md px-3 py-2 bg-background focus:outline-none focus:ring-2 focus:ring-primary" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm mb-2">Card Details</label>
+            <div className="border rounded-md px-3 py-3 bg-background focus-within:ring-2 focus-within:ring-primary">
+              <CardElement options={{ style: { base: { fontSize: '16px' } } }} />
+            </div>
+          </div>
+          {error && <div className="text-destructive text-sm bg-destructive/10 border border-destructive rounded-md px-3 py-2">{error}</div>}
+          {success && <div className="text-green-700 text-sm bg-green-100 border border-green-300 rounded-md px-3 py-2">Payment successful! Check your email for the receipt.</div>}
+          <Button type="submit" variant="hero" size="lg" className="w-full" disabled={!stripe || loading}>
+            {loading ? 'Processing…' : 'Pay $19 Securely'}
+          </Button>
+        </form>
+        <div className="px-6 pb-6">
+          <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Lock size={16} />
+              <span>Stripe secure payment</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              {['visa','mastercard','amex','applepay','googlepay'].map((brand) => (
+                <span key={brand} className="px-2 py-1 text-xs rounded border bg-background">
+                  {brand === 'visa' && 'Visa'}
+                  {brand === 'mastercard' && 'Mastercard'}
+                  {brand === 'amex' && 'American Express'}
+                  {brand === 'applepay' && 'Apple Pay'}
+                  {brand === 'googlepay' && 'Google Pay'}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-      {error && <div className="text-destructive text-sm">{error}</div>}
-      {success && <div className="text-green-600 text-sm">Payment successful! Check your email for the receipt.</div>}
-      <Button type="submit" variant="hero" disabled={!stripe || loading}>
-        {loading ? 'Processing…' : 'Pay $19'}
-      </Button>
-    </form>
+    </div>
   );
 };
 

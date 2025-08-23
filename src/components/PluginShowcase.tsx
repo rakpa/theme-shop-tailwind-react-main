@@ -270,15 +270,6 @@ const PluginShowcase = () => {
                       {plugin.description}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Download size={14} className="mr-1" />
-                      25K+ downloads
-                    </div>
-                    <div className="text-2xl font-bold text-primary">
-                      ${plugin.price}
-                    </div>
-                  </div>
                   <div className="flex flex-col sm:flex-row gap-2">
                     <Button variant="outline" size="sm">Demo</Button>
                   </div>

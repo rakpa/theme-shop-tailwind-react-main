@@ -137,33 +137,9 @@ const ThemeShowcase = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-2">
+                <h3 className="text-xl font-semibold text-foreground">
                   {theme.name}
                 </h3>
-
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {theme.features.map((feature, index) => (
-                    <Badge key={index} variant="outline" className="text-xs">
-                      {feature}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Download size={14} className="mr-1" />
-                    {theme.downloads} downloads
-                  </div>
-                  <div className="text-2xl font-bold text-primary">
-                    ${theme.price}
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <Button variant="outline" size="sm">
-                    <Eye size={16} />
-                  </Button>
-                </div>
               </CardContent>
             </Card>
           ))}
@@ -229,22 +205,7 @@ const ThemeShowcase = () => {
                         4.9
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{name}</h3>
-                    <div className="flex flex-wrap gap-1 mb-4">
-                      <Badge variant="outline" className="text-xs">Feature 1</Badge>
-                      <Badge variant="outline" className="text-xs">Feature 2</Badge>
-                      <Badge variant="outline" className="text-xs">Feature 3</Badge>
-                    </div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Download size={14} className="mr-1" />
-                        1K+ downloads
-                      </div>
-                      <div className="text-2xl font-bold text-primary">$49</div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-2">
-                      <Button variant="outline" size="sm"><Eye size={16} /></Button>
-                    </div>
+                    <h3 className="text-xl font-semibold text-foreground">{name}</h3>
                   </CardContent>
                 </Card>
               );

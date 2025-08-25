@@ -26,7 +26,7 @@ export default async function handler(req, res) {
             unit_amount: 1900,
             product_data: {
               name: "One-time Payment - $19",
-              description: "Premium 200+ WordPress themes and 400+ Plugins package",
+              description: "\n\nPremium 200+ WordPress themes and 400+ Plugins package",
             },
           },
           quantity: 1,

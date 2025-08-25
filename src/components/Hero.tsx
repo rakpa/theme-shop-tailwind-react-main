@@ -33,7 +33,7 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button variant="hero" size="xl" className="group" onClick={handleCheckout}>
-                One-time Payment -$19
+                One-time Payment - $19
               </Button>
               <Button variant="ghost" size="xl" className="text-primary-foreground hover:bg-primary-foreground/10">
                 View Demos

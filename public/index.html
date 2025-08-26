@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Video Compressor</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+	<style>
+		:root { --bg: #0b0f14; --panel: #121821; --muted: #1b2430; --text: #e5eef7; --accent: #4eb5ff; --accent2: #5cf; }
+		* { box-sizing: border-box; }
+		html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+		.container { max-width: 720px; margin: 0 auto; padding: 24px; }
+		.header { text-align: center; margin: 24px 0 16px; }
+		.panel { background: var(--panel); border: 1px solid #1f2a36; border-radius: 12px; padding: 16px; }
+		.dropzone { border: 2px dashed #274057; border-radius: 12px; padding: 28px; text-align: center; background: #0f1620; transition: border-color .2s ease, background .2s ease; }
+		.dropzone.drag { border-color: var(--accent); background: #0d1a26; }
+		.btn { appearance: none; background: linear-gradient(180deg, var(--accent), var(--accent2)); color: #00111f; border: none; border-radius: 10px; padding: 12px 16px; font-weight: 600; cursor: pointer; }
+		.help { color: #a9bac9; font-size: 14px; margin-top: 8px; }
+		.progress { height: 10px; background: #0b1220; border-radius: 6px; overflow: hidden; border: 1px solid #1e2a36; margin-top: 16px; }
+		.progress > div { height: 100%; width: 0%; background: linear-gradient(90deg, #4eb5ff, #5cf); transition: width .2s ease; }
+		.result { margin-top: 16px; }
+		.small { font-size: 13px; color: #8ea0b3; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Video Compressor & Converter</h1>
+			<p class="small">Uploads up to 1 GB. Converts to MP4 (H.264), 720p max, ≤ 10 MB.</p>
+		</div>
+		<div class="panel">
+			<div id="dropzone" class="dropzone">
+				<p><strong>Drag & drop</strong> a video here</p>
+				<p class="small">or</p>
+				<button id="pick" class="btn">Choose file</button>
+				<input id="file" type="file" accept="video/mp4,video/quicktime,video/x-msvideo,video/x-matroska" hidden />
+				<p class="help">Supported: MP4, MOV, AVI, MKV. Max size: 1 GB.</p>
+			</div>
+
+			<div class="progress" id="progress" style="display:none">
+				<div id="bar"></div>
+			</div>
+
+			<div class="result" id="result"></div>
+		</div>
+	</div>
+
+	<script src="/app.js" defer></script>
+</body>
+</html>

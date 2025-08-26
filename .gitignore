@@ -7,6 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+node_modules/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/data/uploads/
+/data/outputs/
+/data/passlogs/
+
 node_modules
 dist
 dist-ssr

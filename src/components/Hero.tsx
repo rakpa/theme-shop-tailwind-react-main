@@ -27,9 +27,9 @@ const Hero = () => {
               multi-page layouts, and one-page templates. Perfect for any business.
             </p>
 
-            <p className="text-lg font-semibold text-accent-foreground mb-3">
-              Premium 200+ WordPress themes and 400+ Plugins package
-            </p>
+           <p className="text-lg font-semibold text-primary-foreground mb-3">
+  Premium 200+ WordPress themes and 400+ Plugins package
+</p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button variant="hero" size="xl" className="group" onClick={handleCheckout}>

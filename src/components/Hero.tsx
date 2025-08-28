@@ -7,20 +7,20 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-hero-gradient py-32 overflow-hidden relative">
+    <section className="bg-hero-gradient py-24 overflow-hidden relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           <div className="lg:w-full text-center">
-            <Badge className="mb-10 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
+            <Badge className="mb-12 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
               🎉 New Premium Collection Available
             </Badge>
             
-            <h1 className="text-4xl lg:text-6xl font-bold text-primary-foreground mb-10 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold text-primary-foreground mb-12 leading-tight">
               The Best Selling Multi-Purpose & Bootstrap 
               <span className="block text-accent">WordPress Templates</span>
             </h1>
             
-            <p className="text-xl text-primary-foreground/90 mb-12 leading-relaxed">
+            <p className="text-xl text-primary-foreground/90 mb-16 leading-relaxed">
               Premium WordPress themes and plugins with professional design, 
               multi-page layouts, and one-page templates. Perfect for any business.
             </p>

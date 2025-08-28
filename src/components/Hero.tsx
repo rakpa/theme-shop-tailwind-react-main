@@ -16,7 +16,7 @@ const Hero = () => {
             </Badge>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-primary-foreground mb-10 leading-relaxed">
-              The Best Selling Multi-Purpose & Bootstrap 
+ The Best Selling Multi-Purpose & Bootstrap&nbsp;
               <span className="block text-accent">WordPress Templates</span>
             </h1>
             
